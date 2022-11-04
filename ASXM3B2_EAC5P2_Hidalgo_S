@@ -1,0 +1,61 @@
+package aSXM3B2_EAC5P2_Hidalgo_S;
+
+public class ASXM3B2_EAC5P2_Hidalgo_S {
+
+	static final int ID_USUARI = 0;
+	static final int ID_DNI = 1;
+	static final int ID_DATA_ALTA = 2;
+	static final int ID_DATA_BAIXA = 3;
+	static final int REG_INEXISTENT = -1;
+
+	public static void main(String[] args) {
+		ASXM3B2_EAC5P2_Hidalgo_S prg = new ASXM3B2_EAC5P2_Hidalgo_S();
+		prg.inici();
+	}
+
+	void inici() {
+		String[][] registre = {
+				// usuari NIF DATA_ALTA DATA_BAIXA
+				{ "rgalvez", "99888777Z", "02/01/2020", "" }, { "jpuig", "11222333A", "10/02/2020", "10/05/2020" },
+				{ "rsoto", "45821635K", "15/02/2020", "15/05/2020" },
+				{ "agarcia", "88111666S", "20/02/2020", "20/02/2021" },
+				{ "fgarcia", "34985423A", "25/03/2020", "25/09/2020" }, { "rsoto", "45821635K", "01/04/2021", "" },
+				{ "jpuig", "11222333A", "15/04/2021", "" }, { "ralonso", "22333444B", "10/05/2021", "" },
+				{ "fgarcia", "34985423A", "01/06/2021", "30/09/2021" },
+				{ "efuster", "33444555C", "08/06/2021", "08/10/2021" },
+				{ "sfont", "44555666D", "10/06/2021", "10/11/2021" }, { "msoler", "55666777E", "15/06/2021", "" },
+				{ "efuster", "33444555C", "01/02/2022", "" }, { "sferrer", "66777888F", "10/02/2022", "" },
+				{ "jcasas", "77888999G", "01/03/2022", "" }, { "", "", "", "" }, { "", "", "", "" }, { "", "", "", "" },
+				{ "", "", "", "" }, { "", "", "", "" }, { "", "", "", "" } };
+
+		CriterisCercaUsuaris criteris = new CriterisCercaUsuaris();
+		criteris.anyAlta = "2020";
+		criteris.anyBaixa = "2021";
+		System.out.println("Usuaris amb data d'alta al 2020");
+		System.out.println("_______________________________");
+		mostrarUsuarisEntreAnyAltaAndBaixa(registre, criteris);
+
+		criteris = new CriterisCercaUsuaris();
+		criteris.anyAlta = "2021";
+		criteris.anyBaixa = "2021";
+		System.out.println("");
+		System.out.println("");
+		System.out.println("i usuaris amb data alta 2021");
+		System.out.println("_____________________________");
+		mostrarUsuarisEntreAnyAltaAndBaixa(registre, criteris);
+	}
+
+	void mostrarUsuarisEntreAnyAltaAndBaixa(String[][] registre, CriterisCercaUsuaris criteris) {
+		 
+		
+		for (int i = 0; i < registre.length; i++) {
+			if (registre[i][ID_DATA_ALTA].contains(criteris.anyAlta)
+					&& registre[i][ID_DATA_BAIXA].contains(criteris.anyBaixa)) {
+				
+					System.out.print("\n" + registre[i][ID_USUARI] + "\t"  + registre[i][ID_DATA_ALTA] + "\t" + registre[i][ID_DATA_BAIXA]); 
+				}
+			}
+		}
+	}
+
+
