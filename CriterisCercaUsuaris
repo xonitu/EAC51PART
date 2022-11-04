@@ -5,32 +5,5 @@ public class CriterisCercaUsuaris {
 	String anyAlta;
 	String anyBaixa;
 	
-
-public static void main(String[] args) {
-	CriterisCercaUsuaris prg = new CriterisCercaUsuaris();
-    prg.inici();
-}
-void inici() {
-	CriterisCercaUsuaris criteris1 = new CriterisCercaUsuaris();
-    criteris1.anyAlta = "2020";
-    criteris1.anyBaixa = "2021";
-    mostrarUsuarisEntreAnyAltaAndBaixa(null, criteris1);
-
-    CriterisCercaUsuaris criteris2 = new CriterisCercaUsuaris();
-    criteris2.anyAlta = "2021";
-    criteris2.anyBaixa = "2021";
-    mostrarUsuarisEntreAnyAltaAndBaixa(null, criteris2);
-
-}
-private void mostrarUsuarisEntreAnyAltaAndBaixa(Object object, CriterisCercaUsuaris criteris1) {
-	// TODO Auto-generated method stub
 	
 }
-
-
-		
-	
-}
-
-
-
