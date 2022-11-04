@@ -1,0 +1,8 @@
+package aSXM3B2_EAC5P2_Hidalgo_S;
+
+public class Treballadors {
+	String nom;
+	String user;
+	String dni;
+
+}
